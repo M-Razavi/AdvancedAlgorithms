@@ -13,16 +13,16 @@ public class Naive {
         boolean found = false;
         for (int i = 0; i < tLen - pLen; i++) {
 
-           found = true;
+//            found = true;
             int j;
             for (j = 0; j < pLen; j++) {
                 if (patternArray[j] != textArray[i + j]) {
-                   found = false;
+//                    found = false;
                     break;
                 }
             }
-           if(found)
-            {
+//            if(found)
+            if (j == pLen) {
                 System.out.println("String found at " + (i + 1) + " position!!");
             }
         }
