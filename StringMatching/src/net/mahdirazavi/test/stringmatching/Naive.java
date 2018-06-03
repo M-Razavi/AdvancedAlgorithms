@@ -3,7 +3,7 @@ package net.mahdirazavi.test.stringmatching;
 public class Naive {
 
     public static void search(String text, String pattern) {
-        System.out.println("Naive String matching algorithm starts... ");
+        System.out.println("\nNaive String matching algorithm starts... ");
         char[] textArray = text.toCharArray();
         char[] patternArray = pattern.toCharArray();
 
