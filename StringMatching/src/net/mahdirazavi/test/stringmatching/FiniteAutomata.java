@@ -1,6 +1,6 @@
 package net.mahdirazavi.test.stringmatching;
 
-public class FiniteAutomata {
+public class FiniteAutomata implements Searchable {
 
     public static final int NO_OF_CHARS = 256;
 
@@ -24,7 +24,7 @@ public class FiniteAutomata {
         return 0;
     }
 
-    public static void computeTF(String pattern, int[][] TF) {
+    public void computeTF(String pattern, int[][] TF) {
         int M = pattern.length();
         int state, x;
         for (state = 0; state <= M; ++state)
@@ -32,7 +32,7 @@ public class FiniteAutomata {
                 TF[state][x] = getNextState(pattern, state, x);
     }
 
-    public static void search(String text, String pattern) {
+    public void search(String text, String pattern) {
         System.out.println("\nFinite Automata's string matching algorithm started...");
 
         int M = pattern.length();
@@ -44,11 +44,9 @@ public class FiniteAutomata {
         // Process txt over FA.
         int i, state = 0;
         for (i = 0; i < N; i++) {
-//            System.out.println(i + " :" + text.charAt(i));
             state = TF[state][text.charAt(i)];
             if (state == M) {
-                System.out.print(pattern);
-                System.out.println(" found at " + (i - M + 1));
+                System.out.println("'" + pattern + "' found at index " + (i - M + 1));
             }
         }
     }
