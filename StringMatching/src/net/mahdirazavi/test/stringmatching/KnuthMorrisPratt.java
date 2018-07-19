@@ -33,7 +33,7 @@ public class KnuthMorrisPratt implements Searchable {
     }
 
     public void search(String text, String pattern) {
-        System.out.println("\nKMP string matching algorithm started...");
+        System.out.println("\nKMP string matching algorithm starts... ");
         int M = pattern.length();
         int N = text.length();
 
@@ -54,7 +54,6 @@ public class KnuthMorrisPratt implements Searchable {
             }
             if (j == M) {
                 System.out.println("'" + pattern + "' found at index " + (i - j));
-
                 j = lps[j - 1];
             }
 

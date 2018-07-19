@@ -33,7 +33,7 @@ public class FiniteAutomata implements Searchable {
     }
 
     public void search(String text, String pattern) {
-        System.out.println("\nFinite Automata's string matching algorithm started...");
+        System.out.println("\nFinite Automata's string matching algorithm starts... ");
 
         int M = pattern.length();
         int N = text.length();

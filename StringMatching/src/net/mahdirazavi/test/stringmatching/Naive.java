@@ -21,7 +21,6 @@ public class Naive implements Searchable {
             }
             if (j == pLen) {
                 System.out.println("'" + pattern + "' found at index " + i);
-
             }
         }
     }

@@ -16,8 +16,9 @@ public class RabinKarp implements Searchable {
             System.out.println("String found at " + (0) + " position!!");
         for (int i = m; i < n; i++) {
             oldHash = getNewHash(text, i - m, i, oldHash, m);
-            if (key == oldHash && equal(text, pattern, i - m + 1))
+            if (key == oldHash && equal(text, pattern, i - m + 1)) {
                 System.out.println("'" + pattern + "' found at index " + (i - m + 1));
+            }
         }
     }
 
