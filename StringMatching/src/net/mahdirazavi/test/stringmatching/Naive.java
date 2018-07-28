@@ -2,6 +2,11 @@ package net.mahdirazavi.test.stringmatching;
 
 public class Naive implements Searchable {
 
+    @Override
+    public String getName() {
+        return "Naive";
+    }
+
     public void search(String text, String pattern) {
         System.out.println("\nNaive String matching algorithm starts... ");
 
@@ -20,7 +25,7 @@ public class Naive implements Searchable {
                 }
             }
             if (j == pLen) {
-                System.out.println("'" + pattern + "' found at index " + i);
+//                System.out.println("'" + pattern + "' found at index " + i);
             }
         }
     }

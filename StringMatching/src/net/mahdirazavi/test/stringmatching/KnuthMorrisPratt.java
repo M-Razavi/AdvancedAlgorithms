@@ -1,72 +1,46 @@
 package net.mahdirazavi.test.stringmatching;
 
 public class KnuthMorrisPratt implements Searchable {
-    void computeLPSArray(String pat, int M, int lps[]) {
-        // length of the previous longest prefix suffix
-        int len = 0;
-        int i = 1;
-        lps[0] = 0; // lps[0] is always 0
 
-        // the loop calculates lps[i] for i = 1 to M-1
-        while (i < M) {
-            if (pat.charAt(i) == pat.charAt(len)) {
-                len++;
-                lps[i] = len;
-                i++;
-            } else // (pat[i] != pat[len])
-            {
-                // This is tricky. Consider the example.
-                // AAACAAAA and i = 7. The idea is similar
-                // to search step.
-                if (len != 0) {
-                    len = lps[len - 1];
+    @Override
+    public String getName() {
+        return "KnuthMorrisPratt";
+    }
 
-                    // Also, note that we do not increment
-                    // i here
-                } else // if (len == 0)
-                {
-                    lps[i] = len;
-                    i++;
-                }
-            }
+    private int R;       // the radix
+    private int[][] dfa;       // the KMP automoton
+
+
+    private void preprocessing(String pat) {
+        R = 256;
+
+        // build DFA from pattern
+        int m = pat.length();
+        dfa = new int[R][m];
+        dfa[pat.charAt(0)][0] = 1;
+        for (int x = 0, j = 1; j < m; j++) {
+            for (int c = 0; c < R; c++)
+                dfa[c][j] = dfa[c][x];     // Copy mismatch cases.
+            dfa[pat.charAt(j)][j] = j + 1;   // Set match case.
+            x = dfa[pat.charAt(j)][x];     // Update restart state.
         }
     }
 
     public void search(String text, String pattern) {
         System.out.println("\nKMP string matching algorithm starts... ");
-        int M = pattern.length();
-        int N = text.length();
 
-        // create lps[] that will hold the longest
-        // prefix suffix values for pattern
-        int lps[] = new int[M];
-        int j = 0; // index for pat[]
+        preprocessing(pattern);
+        // simulate operation of DFA on text
+        int m = pattern.length();
+        int n = text.length();
+        int i, j;
+        for (i = 0, j = 0; i < n && j < m; i++) {
+            j = dfa[text.charAt(i)][j];
 
-        // Preprocess the pattern (calculate lps[]
-        // array)
-        computeLPSArray(pattern, M, lps);
-
-        int i = 0; // index for txt[]
-        while (i < N) {
-            if (pattern.charAt(j) == text.charAt(i)) {
-                j++;
-                i++;
-            }
-            if (j == M) {
-                System.out.println("'" + pattern + "' found at index " + (i - j));
-                j = lps[j - 1];
-            }
-
-            // mismatch after j matches
-            else if (i < N && pattern.charAt(j) != text.charAt(i)) {
-                // Do not match lps[0..lps[j-1]] characters,
-                // they will match anyway
-                if (j != 0)
-                    j = lps[j - 1];
-                else
-                    i = i + 1;
+            if (j == m) {   // found
+//                System.out.println("'" + pattern + "' found at index " + (i - m + 1));
+                j = 0;
             }
         }
     }
-
 }

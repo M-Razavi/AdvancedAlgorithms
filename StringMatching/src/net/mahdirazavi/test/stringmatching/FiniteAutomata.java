@@ -2,6 +2,11 @@ package net.mahdirazavi.test.stringmatching;
 
 public class FiniteAutomata implements Searchable {
 
+    @Override
+    public String getName() {
+        return "FiniteAutomata";
+    }
+
     public static final int NO_OF_CHARS = 256;
 
     public static int getNextState(String patern, int state, int x) {
@@ -46,7 +51,7 @@ public class FiniteAutomata implements Searchable {
         for (i = 0; i < N; i++) {
             state = TF[state][text.charAt(i)];
             if (state == M) {
-                System.out.println("'" + pattern + "' found at index " + (i - M + 1));
+//                System.out.println("'" + pattern + "' found at index " + (i - M + 1));
             }
         }
     }

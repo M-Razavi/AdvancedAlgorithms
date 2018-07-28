@@ -5,6 +5,11 @@ public class RabinKarp implements Searchable {
 
     static final long prime = 101;
 
+    @Override
+    public String getName() {
+        return "RabinKarp";
+    }
+
     public void search(String text, String pattern) {
         System.out.println("\nRabinKarp String matching algorithm starts... ");
 
@@ -17,7 +22,7 @@ public class RabinKarp implements Searchable {
         for (int i = m; i < n; i++) {
             oldHash = getNewHash(text, i - m, i, oldHash, m);
             if (key == oldHash && equal(text, pattern, i - m + 1)) {
-                System.out.println("'" + pattern + "' found at index " + (i - m + 1));
+//                System.out.println("'" + pattern + "' found at index " + (i - m + 1));
             }
         }
     }

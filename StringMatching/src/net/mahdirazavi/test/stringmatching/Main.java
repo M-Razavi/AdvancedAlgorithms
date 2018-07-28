@@ -12,23 +12,31 @@ public class Main {
         Path path = Paths.get("");
         System.out.println(path.toAbsolutePath());
         String[] fileNames = {"aesop11.txt", "gulliver.txt", "hitch2.txt", "hound-b.txt"};
+//        String fileName = fileNames[0];
         String[] patterns = {"Two", "number", "themselves", "from", "thing", "understanding", "god", "urgent", "particularly"};
-        Searchable[] stAlgorithms = {new Naive(), new RabinKarp(), new FiniteAutomata(), new KnuthMorrisPratt()};
-//        String pattern = patterns[0];
+        Searchable[] stAlgorithms = {new KnuthMorrisPratt(), new Naive(), new RabinKarp(), new FiniteAutomata()};
+        String pattern = patterns[0];
+        ResultFormater rf;
+        for (Searchable smAlgorithm : stAlgorithms) {
 
-        for (String name : fileNames) {
-            System.out.println("\nLoading " + name + " file.");
-            String text = new String(Files.readAllBytes(path.resolve("StringMatching\\Test-Files\\" + name).toAbsolutePath()));
+            rf = new ResultFormater(smAlgorithm.getName());
 
-            for (String pattern : patterns) {
-
-                for (Searchable smAlgorithm : stAlgorithms) {
+            for (String fileName : fileNames) {
+                System.out.println("\nLoading " + fileName + " file.");
+                String text = new String(Files.readAllBytes(path.resolve("StringMatching\\Test-Files\\" + fileName).toAbsolutePath()));
+//            for (String pattern : patterns) {
+                for (int i = 0; i < 100; i++) {
                     long start = System.nanoTime();
                     smAlgorithm.search(text, pattern);
                     long end = System.nanoTime();
-                    System.out.println("Execution time(μs)= " + ((end - start) / 1000));
+                    long time = (end - start) / 1000;
+//                System.out.println("Execution time(μs)= " + time);
+                    rf.addNewExecutionTime(time);
                 }
+                rf.writeResult(path.toAbsolutePath() + "\\" + fileName + ".csv");
             }
         }
     }
+
+
 }
