@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GraphColoring2.iml" filepath="$PROJECT_DIR$/.idea/modules/GraphColoring2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GraphColoring2_main.iml" filepath="$PROJECT_DIR$/.idea/modules/GraphColoring2_main.iml" group="GraphColoring2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GraphColoring2_test.iml" filepath="$PROJECT_DIR$/.idea/modules/GraphColoring2_test.iml" group="GraphColoring2" />
+      <module fileurl="file://$PROJECT_DIR$/StringMatching/StringMatching.iml" filepath="$PROJECT_DIR$/StringMatching/StringMatching.iml" />
+    </modules>
+  </component>
+</project>

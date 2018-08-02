@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="GraphColoring2:test" external.linked.project.path="$MODULE_DIR$/../../GraphColoring2" external.root.project.path="$MODULE_DIR$/../../GraphColoring2" external.system.id="GRADLE" external.system.module.group="GraphColoring2" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../GraphColoring2/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../GraphColoring2/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../GraphColoring2/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GraphColoring2/src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: com.github.jgraph:jgraphx:v3.9.8" level="project" />
+    <orderEntry type="library" name="Gradle: jgraph:jgraph:5.13.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.graphstream:gs-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.graphstream:mbox2:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.graphstream:pherd:1.0" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="GraphColoring2_main" />
+</module>

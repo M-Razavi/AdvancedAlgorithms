@@ -3,12 +3,12 @@ package net.mahdirazavi.test.stringmatching;
 public class Naive implements Searchable {
 
     @Override
-    public String getName() {
+    public String  getName() {
         return "Naive";
     }
 
-    public void search(String text, String pattern) {
-        System.out.println("\nNaive String matching algorithm starts... ");
+    public void search(String  text, String  pattern) {
+        System.out.println("\nNaive String  matching algorithm starts... ");
 
         char[] textArray = text.toCharArray();
         char[] patternArray = pattern.toCharArray();

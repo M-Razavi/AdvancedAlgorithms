@@ -979,7 +979,7 @@ five horses. I presently knew what they meant, and was glad at heart
 to receive this intelligence. It seems upon my first reaching the           
 shore after our shipwreck, I was in such confusion, that before I came      
 to the place where I went to sleep, my hat, which I had fastened            
-with a string to my head while I was rowing, and had stuck on all           
+with a String to my head while I was rowing, and had stuck on all
 the time I was swimming, fell off after I came to land; the string, as      
 I conjecture, breaking by some accident which I never observed, but         
 thought my hat had been lost at sea. I entreated his Imperial               
@@ -4819,7 +4819,7 @@ whence he might receive the petitions of his subjects. And to this
 purpose several packthreads were let down with small weights at the         
 bottom. On these packthreads the people strung their petitions,             
 which mounted up directly like the scraps of paper fastened by              
-school boys at the end of the string that holds their kite.                 
+school boys at the end of the String that holds their kite.
 Sometimes we received wine and victuals from below, which were drawn        
 up by pulleys.                                                              
   The knowledge I had in mathematics gave me great assistance in            

@@ -7,10 +7,10 @@ import java.util.List;
 
 public class ResultFormater {
 
-    String name;
+    String  name;
     List<Double> executationTimes;
 
-    public ResultFormater(String name) {
+    public ResultFormater(String  name) {
         this.name = name;
         this.executationTimes = new LinkedList<>();
     }
@@ -19,7 +19,7 @@ public class ResultFormater {
         executationTimes.add(time);
     }
 
-    public void writeResult(String outputPath) throws IOException {
+    public void writeResult(String  outputPath) throws IOException {
         executationTimes.sort((o1, o2) -> (int) ((o1 - o2) * 10000));
         Double[] times = new Double[executationTimes.size()];
         executationTimes.toArray(times);

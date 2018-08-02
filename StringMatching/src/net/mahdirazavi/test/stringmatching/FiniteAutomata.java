@@ -3,13 +3,13 @@ package net.mahdirazavi.test.stringmatching;
 public class FiniteAutomata implements Searchable {
 
     @Override
-    public String getName() {
+    public String  getName() {
         return "FiniteAutomata";
     }
 
     public static final int NO_OF_CHARS = 256;
 
-    public static int getNextState(String patern, int state, int x) {
+    public static int getNextState(String  patern, int state, int x) {
         int M = patern.length();
         char[] pat = patern.toCharArray();
         if (state < M && x == pat[state])
@@ -29,7 +29,7 @@ public class FiniteAutomata implements Searchable {
         return 0;
     }
 
-    public void computeTF(String pattern, int[][] TF) {
+    public void computeTF(String  pattern, int[][] TF) {
         int M = pattern.length();
         int state, x;
         for (state = 0; state <= M; ++state)
@@ -37,8 +37,8 @@ public class FiniteAutomata implements Searchable {
                 TF[state][x] = getNextState(pattern, state, x);
     }
 
-    public void search(String text, String pattern) {
-        System.out.println("\nFinite Automata's string matching algorithm starts... ");
+    public void search(String  text, String  pattern) {
+        System.out.println("\nFinite Automata's String matching algorithm starts... ");
 
         int M = pattern.length();
         int N = text.length();

@@ -1,0 +1,15 @@
+group 'net.mahdirazavi.test.graphcoloring'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.github.jgraph', name: 'jgraphx', version: 'v3.9.3'
+
+}

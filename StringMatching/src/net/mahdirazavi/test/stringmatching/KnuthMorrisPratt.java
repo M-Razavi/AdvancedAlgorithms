@@ -3,7 +3,7 @@ package net.mahdirazavi.test.stringmatching;
 public class KnuthMorrisPratt implements Searchable {
 
     @Override
-    public String getName() {
+    public String  getName() {
         return "KnuthMorrisPratt";
     }
 
@@ -11,7 +11,7 @@ public class KnuthMorrisPratt implements Searchable {
     private int[][] dfa;       // the KMP automoton
 
 
-    private void preprocessing(String pat) {
+    private void preprocessing(String  pat) {
         R = 256;
 
         // build DFA from pattern
@@ -26,8 +26,8 @@ public class KnuthMorrisPratt implements Searchable {
         }
     }
 
-    public void search(String text, String pattern) {
-        System.out.println("\nKMP string matching algorithm starts... ");
+    public void search(String  text, String  pattern) {
+        System.out.println("\nKMP String matching algorithm starts... ");
 
         preprocessing(pattern);
         // simulate operation of DFA on text
